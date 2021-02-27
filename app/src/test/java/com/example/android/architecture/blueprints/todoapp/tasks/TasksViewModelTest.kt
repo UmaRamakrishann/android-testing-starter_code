@@ -13,31 +13,18 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 
-@RunWith(AndroidJUnit4 ::class)
-class TasksViewModelTest() {
+@RunWith(AndroidJUnit4::class)
+class TasksViewModelTest {
     @get:Rule
     var instantExecutorRule = InstantTaskExecutorRule()
-
-
-    // Other code…
-
-
     @Test
     fun addNewTask_setsNewTaskEvent() {
-
         // Given a fresh ViewModel
         val tasksViewModel = TasksViewModel(ApplicationProvider.getApplicationContext())
-
         // When adding a new task
         tasksViewModel.addNewTask()
-
         // Then the new task event is triggered
         val value = tasksViewModel.newTaskEvent.getOrAwaitValue()
-        assertThat(
-            value.getContentIfNotHandled(), (not(nullValue()))
-        )
+        assertThat(value.getContentIfNotHandled(), (not(nullValue())))
     }
-
-
-
 }
