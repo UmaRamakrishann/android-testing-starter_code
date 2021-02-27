@@ -14,13 +14,10 @@ import org.junit.Test
 import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4 ::class)
-class TasksViewModelTest() : Parcelable {
+class TasksViewModelTest() {
     @get:Rule
     var instantExecutorRule = InstantTaskExecutorRule()
 
-    constructor(parcel: Parcel) : this() {
-
-    }
 
     // Other code…
 
@@ -41,21 +38,6 @@ class TasksViewModelTest() : Parcelable {
         )
     }
 
-    override fun writeToParcel(parcel: Parcel, flags: Int) {
 
-    }
 
-    override fun describeContents(): Int {
-        return 0
-    }
-
-    companion object CREATOR : Parcelable.Creator<TasksViewModelTest> {
-        override fun createFromParcel(parcel: Parcel): TasksViewModelTest {
-            return TasksViewModelTest(parcel)
-        }
-
-        override fun newArray(size: Int): Array<TasksViewModelTest?> {
-            return arrayOfNulls(size)
-        }
-    }
 }
